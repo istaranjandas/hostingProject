@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}| profile{% endblock %}
+
+{% block html_head %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container">
+      <button style="margin-left: 45rem;" type="submit" class="btn btn-primary"><a style="color: #fff; text-decoration: none;" href="{% url 'edit-profile' %}">Edit Profile</a></button>
+
+      <div class="profile">
+        <img src="{{user.profile.image.url}}" alt="Profile Picture">
+
+        <div>
+          <h1>{{user.profile.fullname}}</h1>
+          <h4>@{{user.username}}</h4>
+          <h6>{{user.profile.institute}}</h6>
+        </div>
+      </div>
+
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">React</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">Express.js</span>
+        <span class="skill">MongoDB</span>
+      </div>
+      <div>
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse error temporibus, officia sunt asperiores iste dolorum reprehenderit harum, inventore vero atque laboriosam rem soluta natus voluptas quasi. Cumque non doloremque aspernatur consectetur ad nam debitis mollitia tempora eum quis! Similique architecto numquam eos magnam officiis. Voluptatum fugit quod unde hic?</p>
+        
+        <h2>Personal Details</h2>
+        <div class="personal-details">
+        <table>
+          <tr>
+            <td>Email:</td>
+            <td>{{user.email}}</td>
+          </tr>
+          <tr>
+            <td>Year of Passing:</td>
+            <td>{{user.year_of_passing}}</td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td>{{user.address}}</td>
+          </tr>
+          <tr>
+            <td>Phone:</td>
+            <td>{{user.phone}}</td>
+          </tr>
+          <tr>
+            <td>Branch:</td>
+            <td>{{user.branch}}</td>
+          </tr>
+        </table>
+      </div>
+        <br>
+        <h2>Coding Platform Details</h2>
+        <div class="platform-details">
+          <form method="post">
+              {% csrf_token %}
+            <div class="form-group">
+                {%load crispy_forms_tags%}
+                {{ form|crispy }}
+            </div>
+            <br>
+          <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %} 

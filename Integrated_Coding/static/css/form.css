@@ -1,0 +1,76 @@
+body {
+  background: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  padding: 40px;
+  background-color: #fff; 
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  margin: 80px auto;
+}
+
+form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+form input {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+form button {
+  width: 100%;
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box; /* this line adds padding in button width */
+
+}
+
+form button:hover {
+  background-color: darkblue;
+  color: #fff;
+}
+
+.forget-password{
+  padding: 20px 0px 0px 0px;
+}
+
+.form-message {
+  color: darkblue;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media (min-width: 500px) {
+  /* increase button width to match input width for larger screens */
+  form input {
+    width: 70%;
+  }
+
+  form button {
+    width: 70%;
+  }
+}

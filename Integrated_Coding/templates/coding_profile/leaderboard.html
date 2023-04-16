@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}| leaderboard{% endblock %}
+
+{% block html_head %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/leaderboard.css' %}">
+{% endblock %}
+
+{% block content %}
+	
+		
+		<div class="institute-name" id="institute-name">
+			{{user.profile.institute}}
+		</div>
+	
+
+	<table id="ranking-table">
+		<thead>
+			<tr>
+				<th>Rank</th>
+				<th>Username</th>
+				<th>IC Score</th>
+			</tr>
+		</thead>
+		<tbody>
+            {% for i in leaderboard %}
+			{% if i.user.profile.institute == institute or institute == 'all' %}
+			<tr>
+				<td class="rank"></td>
+				<td><a href="{% url 'view-profile' username=i.user.username %}">{{i.user.username}}</a></td>
+				<td>{{i.ic_score}}</td>
+			</tr>
+			{%endif%}
+            {%endfor%}
+		</tbody>
+	</table>
+
+	<form id="institute-form" method="post" action="">
+        {% csrf_token %}
+		<input type="hidden" name="institute-name" id="institute-name-input">
+	</form>
+
+	<script>
+		// Generate the rank numbers
+		const rows = document.querySelectorAll('#ranking-table tbody tr');
+		for (let i = 0; i < rows.length; i++) {
+			const rankCell = rows[i].querySelector('.rank');
+			rankCell.textContent = i + 1;
+		}
+
+		// Add click event listener to institute name
+		const instituteName = document.getElementById('institute-name');
+			instituteName.addEventListener('click', () => {
+			const instituteNameInput = document.getElementById('institute-name-input');
+			instituteNameInput.value = instituteName.textContent.trim();
+			document.getElementById('institute-form').submit();
+		});
+	</script>
+
+{% endblock %} 

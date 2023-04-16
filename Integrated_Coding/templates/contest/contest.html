@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}| Contest{% endblock %}
+
+{% block html_head %}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/contest.css' %}">
+{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <h2>Upcoming Contest</h2>
+    {% for i in contest %}
+    <div class="card">
+      <div class="platform-info">
+        <img src="{{i.platform.image.url}}" alt="Logo" class="logo">
+        <h6><b>{{i.platform}}</b></h6>
+      </div>
+        <div class="platform-detail">
+          <h4><b>{{i.name}}</b></h4>
+          <p>{{i.date}} | {{i.time}} | {{i.duration}}</p> 
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

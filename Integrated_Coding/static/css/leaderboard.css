@@ -1,0 +1,78 @@
+/* Set the page background color to white and blue */
+body {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+
+
+/* Style the clickable div */
+.institute {
+    background-color: #f2f2f2;
+    color: #333333;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Style the table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+}
+
+/* Style the table header */
+th {
+    background-color: #0066cc;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Style the table data */
+td {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    font-size: 16px;
+}
+
+/* Style the table rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the table rows when hovered */
+tr:hover {
+    background-color: #dddddd;
+    color: #333333;
+}
+.institute-name {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: darkblue;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #888;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .institute-name:hover {
+    background-color: darkblue;
+    box-shadow: 4px 4px 10px #888;
+    transform: translate(2px, 2px);
+    cursor: pointer; /* add hand cursor on hover */
+  }
+  
+  .institute-name:active {
+    background-color: darkblue;
+    box-shadow: none;
+    transform: none;
+  }
+  

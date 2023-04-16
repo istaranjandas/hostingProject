@@ -1,0 +1,6 @@
+users.migrations
+courses.migrations
+./venv
+contest.migrations
+coding_profile.migrations
+db.sqlite3

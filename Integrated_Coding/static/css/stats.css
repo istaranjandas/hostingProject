@@ -1,0 +1,66 @@
+/* Center the card and set its size */
+.card {
+    margin: auto;
+    width: 80%;
+    border: 1px solid black;
+    padding: 20px;
+    }
+    
+    /* Style the logo */
+    .logo {
+    display: block;
+    margin: auto;
+    width: 50%;
+    }
+    
+    /* Center the parent div */
+    .parent {
+    text-align: center;
+    }
+
+    /* Style the subcards */
+    .subcard {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 150px;
+    }
+    
+    /* Style the subcard headings */
+    .subcard h5 {
+    margin: 0;
+    }
+    
+    /* Style the subcard values */
+    .subcard p {
+    margin: 0;
+    font-weight: bold;
+    }
+    
+    /* Style the visit button */
+    .visit-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    }
+    /* Style the logo */
+    .logo {
+    display: block;
+    margin: auto;
+    width: 6%; /* Change the width to 30% */
+    }
+
+
+
+
+    /* Style the hover effect for the visit button */
+    .visit-button:hover {
+    background-color: darkblue;
+    }
